@@ -35,7 +35,8 @@ public class Main {
         System.out.println("1. Task 1: The sequence of n integer numbers. Find the sum of min and max");
         System.out.println("2. Task 2: The sequence of integer numbers. Find the place of min");
         System.out.println("3. Task 3: Determine if the k is the pow of 3");
-        System.out.print("Select task by it's number >>> ");
+        System.out.println("4. Exit");
+        System.out.print("Select task by its number >>> ");
 
         boolean isCorrect = false;
         Tasks choose = null;
@@ -55,6 +56,9 @@ public class Main {
                     choose = Tasks.Third;
                     isCorrect = true;
                     break;
+                case 4:
+                    choose = Tasks.Leave;
+                    isCorrect = true;
                 default:
                     System.out.printf("There is no such task! Number from 1 to %d >>> ", Tasks.values().length);
             }
@@ -67,6 +71,7 @@ public class Main {
             case Tasks.First -> firstTask(scanner);
             case Tasks.Second -> secondTask(scanner);
             case Tasks.Third -> thirdTask(scanner);
+            case Tasks.Leave -> System.exit(0);
         }
     }
 
